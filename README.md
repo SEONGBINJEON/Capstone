@@ -12,6 +12,7 @@
 | `media/renders/` | Isaac Sim 렌더 이미지 14장과 발표자료 제작용 프롬프트 |
 | `docs/progress/` | 날짜별 진행 기록 |
 | `docs/hardware-notes.md` | 모터 ID, 보드, 영구 설정 변경 이력 |
+| `docs/study/` | 학습 가이드: 구조, 모터 통신, 제어 루프, Isaac Sim, 디버깅 기록, 면접 노트 |
 
 ## 빠른 실행 (이 PC 기준)
 
