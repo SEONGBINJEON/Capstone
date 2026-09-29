@@ -1,4 +1,4 @@
-> **2026-09-28 추가:** 리더 26~30 → 팔로워 11~15 + Isaac Sim 연동은 `sim_teleop/README.md`를 보세요. 실행: `./run_sim_teleop.sh` (절대 기준 정렬 후 추종), 정지: `./stop_teleop.sh`, 토크 OFF: `python3 sim_teleop/teleop.py --release`. 작업 기록은 README 끝의 "작업 기록 2026-09-28".
+> **이전 세대 기록 (2026-09-13, 다른 PC, A/B 두 쌍 18개 모터).** 아래 경로 `/home/jeonseongbin/Teleoperation`과 `run_teleop.py` 명령은 당시 환경 기준이며 지금은 쓰지 않습니다. 현재 텔레오퍼레이션(리더 26~30 → 팔로워 11~15 + Isaac Sim)은 [sim_teleop/README.md](sim_teleop/README.md)를 보세요. 저장소 최상위 [README](../README.md)에 다른 PC에서 시작하는 절차가 있습니다.
 
 # 텔레오퍼레이션 실행 안내
 

@@ -14,17 +14,24 @@
 | 파일 | 역할 |
 |---|---|
 | `teleop.py` | 하드웨어 추종 루프. 팔로워 관절 각도를 UDP(127.0.0.1:5005)로 발행 |
-| `isaac_view.py` | Isaac Sim 6.0.1 뷰어. `urdf_v3/my_manipulator/usd_isaac/robot_isaac/robot_isaac.usda` (원본 `robot.urdf`의 메시 경로 `package://assets\...`를 `assets/...`로 고친 `robot_isaac.urdf`를 Isaac 임포터로 변환한 것)를 열고 UDP 각도로 관절을 움직임 |
+| `isaac_view.py` | Isaac Sim 6.0.1 뷰어. 저장소의 `isaac_sim/robot_model/usd_isaac/robot_isaac/robot_isaac.usda`(자동 탐색, 환경변수 `ROBOT_USD`로 변경 가능) (원본 `robot.urdf`의 메시 경로 `package://assets\...`를 `assets/...`로 고친 `robot_isaac.urdf`를 Isaac 임포터로 변환한 것)를 열고 UDP 각도로 관절을 움직임 |
 | `calibrate.py` | 읽기 전용 보정 도구(방향, 기준 자세, 그리퍼 개폐). 모터에는 쓰지 않음 |
 | `scan_motors.py` | 읽기 전용 버스 스캔 |
 | `common.py` | 설정/Rig/각도 변환 공용 코드 (`teleop/hardware.py`의 Rig 재사용) |
+| `scene_lib.py` | 주방 장면·미니 프라이팬·재질 생성 (뷰어와 렌더러 공용) |
+| `render_gallery.py` | 발표용 연출 렌더 (100대 병렬, 3×3 주방, 파지 시퀀스) |
+| `reboot_motor.py` | 과부하 등 래치된 하드웨어 오류가 난 모터 재부팅 |
+| `set_position_limits.py` | EEPROM 위치 제한 변경 (토크 OFF, 이전 값 자동 백업) |
+| `wait_in_range.py` | 팔로워를 손으로 옮길 때 모터 범위 안에 들어올 때까지 읽기 전용 대기 |
+| `probe_usd.py` | USD를 헤드리스로 열어 메시 수·바운딩 박스 확인, 스크린샷 |
+| `offline_loop_test.py` | 모터 없이 가짜 Rig로 제어 루프를 6초 돌려보는 오프라인 테스트 |
 | `../run_sim_teleop.sh` | 뷰어 + 추종 동시 실행 |
 
 파이썬은 시스템 `python3`(3.10)를 쓰고, `dynamixel_sdk`/`pyserial`은 `vendor/`에 동봉되어 있습니다. 뷰어는 Isaac Sim의 `python.sh`로 실행합니다.
 
 ## 처음 한 번: 보정 (약 5분, 모터에 쓰지 않음)
 
-모두 `cd ~/Desktop/Teleoperation` 후 실행. 팔로워 토크는 꺼져 있어야 손으로 움직일 수 있습니다.
+모두 저장소의 `teleoperation/` 폴더에서 실행. 팔로워 토크는 꺼져 있어야 손으로 움직일 수 있습니다.
 
 1. 회전 방향. 관절마다 리더와 팔로워를 손으로 **같은 물리적 방향**으로 20° 이상 돌리면 부호를 자동 판정해 저장합니다.
    ```bash
@@ -84,7 +91,7 @@
 
 ## 발표용 연출 이미지 (render_gallery.py)
 
-실제 학습이 아닌 **연출 렌더**입니다. 결과는 `work/shots/gallery/`.
+실제 학습이 아닌 **연출 렌더**입니다. 결과는 `work/shots/gallery/`에 생성됩니다. 발표에 쓴 최종 14장은 저장소 `media/renders/`에 있습니다.
 ```bash
 ~/isaacsim-6.0.1/python.sh sim_teleop/render_gallery.py            # 전체
 ~/isaacsim-6.0.1/python.sh sim_teleop/render_gallery.py --only hero # 일부: hero, parallel_arms, parallel_kitchens

@@ -1,3 +1,5 @@
+> **이전 세대 기록 (2026-09-13, 다른 PC, A/B 두 쌍 18개 모터).** 아래 경로 `/home/jeonseongbin/Teleoperation`과 `run_teleop.py` 명령은 당시 환경 기준이며 지금은 쓰지 않습니다. 현재 텔레오퍼레이션(리더 26~30 → 팔로워 11~15 + Isaac Sim)은 [sim_teleop/README.md](sim_teleop/README.md)를 보세요. 저장소 최상위 [README](../README.md)에 다른 PC에서 시작하는 절차가 있습니다.
+
 # 두 쌍의 매니퓰레이터 텔레오퍼레이션
 
 실행 명령은 [START_HERE.md](START_HERE.md), 최종 연결·보정·구현 및 문제 해결 내역은 [2026-09-13 상세 기록](docs/implementation_record_2026-09-13.md)에 정리했습니다. 당시 코드와 설정 사본은 `docs/checkpoints/2026-09-13/`에 있습니다.
