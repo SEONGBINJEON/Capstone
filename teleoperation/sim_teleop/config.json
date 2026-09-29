@@ -1,0 +1,142 @@
+{
+  "baud": 1000000,
+  "buses": {
+    "followers": "/dev/serial/by-id/usb-ROBOTIS_OpenCR_Virtual_ComPort_in_FS_Mode_FFFFFFFEFFFF-if00",
+    "leaders": "/dev/serial/by-id/usb-ROBOTIS_OpenRB-150_4CF730625157375037202020FF111C0D-if00"
+  },
+  "period_s": 0.05,
+  "follow_speed_deg_s": 180,
+  "align_speed_deg_s": 15,
+  "safety": {
+    "startup_tolerance_deg": 5,
+    "max_tracking_error_deg": 20,
+    "max_leader_step_deg": 30,
+    "max_temperature_c": 60,
+    "max_cycle_s": 0.15,
+    "max_initial_align_deg": 150,
+    "max_lead_deg": 10,
+    "blocked_hold_s": 1.0
+  },
+  "leader_ignore_hardware_error_ids": [
+    30
+  ],
+  "udp": {
+    "host": "127.0.0.1",
+    "port": 5005
+  },
+  "sim_source": "follower",
+  "joints": [
+    {
+      "name": "joint_1",
+      "kind": "joint",
+      "leader": {
+        "id": 26,
+        "model": 1200
+      },
+      "follower": {
+        "id": 11,
+        "model": 1060,
+        "extended_position": {
+          "reference": 2048,
+          "raw_reference": 1060,
+          "min": 1,
+          "max": 4095
+        }
+      },
+      "leader_zero": 2060,
+      "follower_zero": 2048,
+      "direction": 1,
+      "scale": 1.0,
+      "sim": {
+        "joint": "joint_11",
+        "sign": 1,
+        "offset_deg": 0,
+        "view_sign": -1
+      }
+    },
+    {
+      "name": "joint_2",
+      "kind": "joint",
+      "leader": {
+        "id": 27,
+        "model": 1200
+      },
+      "follower": {
+        "id": 12,
+        "model": 1030
+      },
+      "leader_zero": 2036,
+      "follower_zero": 2334,
+      "direction": 1,
+      "scale": 1.0,
+      "sim": {
+        "joint": "joint_22",
+        "sign": 1,
+        "offset_deg": 0
+      }
+    },
+    {
+      "name": "joint_3",
+      "kind": "joint",
+      "leader": {
+        "id": 28,
+        "model": 1200
+      },
+      "follower": {
+        "id": 13,
+        "model": 1060
+      },
+      "leader_zero": 2047,
+      "follower_zero": 1995,
+      "direction": 1,
+      "scale": 1.0,
+      "sim": {
+        "joint": "joint_33",
+        "sign": 1,
+        "offset_deg": 0
+      }
+    },
+    {
+      "name": "joint_4",
+      "kind": "joint",
+      "leader": {
+        "id": 29,
+        "model": 1200
+      },
+      "follower": {
+        "id": 14,
+        "model": 1060
+      },
+      "leader_zero": 2051,
+      "follower_zero": 2064,
+      "direction": 1,
+      "scale": 1.0,
+      "sim": {
+        "joint": "joint_44",
+        "sign": 1,
+        "offset_deg": 0
+      }
+    },
+    {
+      "name": "gripper",
+      "kind": "gripper",
+      "leader": {
+        "id": 30,
+        "model": 1070
+      },
+      "follower": {
+        "id": 15,
+        "model": 1070
+      },
+      "leader_closed": 160,
+      "leader_open": 1625,
+      "follower_closed": 916,
+      "follower_open": 2279,
+      "sim": {
+        "joint": "joint_55",
+        "closed_deg": 0,
+        "open_deg": 60
+      }
+    }
+  ]
+}

@@ -1,0 +1,381 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id: 29d2c07e16431e1b6bc67f98 / workspace_id: 2efbcbf417c8f235b23c5bfa -->
+<robot name="C:\urdf_v3\my_manipulator">
+  <!-- Link follower_01 -->
+  <link name="follower_01">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link follower_02 -->
+  <link name="follower_02">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link follower_03 -->
+  <link name="follower_03">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link follower_04 -->
+  <link name="follower_04">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link follower_05 -->
+  <link name="follower_05">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link follower_06 -->
+  <link name="follower_06">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link follower_06_follower_06 -->
+  <link name="follower_06_follower_06">
+    <inertial>
+      <origin xyz="-0.0215944 0.0111261 0.0123933" rpy="0 0 0"/>
+      <mass value="0.00310232"/>
+      <inertia ixx="7.8201e-08" ixy="0" ixz="-0" iyy="7.8201e-08" iyz="-0" izz="9.5009e-08"/>
+    </inertial>
+    <!-- Part follower_06 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="-0 -0 -0"/>
+      <geometry>
+        <mesh filename="assets/follower_06.stl"/>
+      </geometry>
+      <material name="follower_06_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-0 -0 -0"/>
+      <geometry>
+        <mesh filename="assets/follower_06.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from follower_06 to follower_06_follower_06 -->
+  <joint name="follower_06_follower_06_fixed" type="fixed">
+    <origin xyz="0.0215944 0.0111261 0.00703672" rpy="3.14159 0 0"/>
+    <parent link="follower_06"/>
+    <child link="follower_06_follower_06"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from follower_05 to follower_06 -->
+  <joint name="joint_55" type="revolute">
+    <origin xyz="0.101701 0.00636871 -0.00852485" rpy="1.5708 1.26378 -1.50826"/>
+    <parent link="follower_05"/>
+    <child link="follower_06"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.89519" upper="4.38799"/>
+  </joint>
+  <!-- Link follower_07 -->
+  <link name="follower_07">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link follower_07_follower_07 -->
+  <link name="follower_07_follower_07">
+    <inertial>
+      <origin xyz="-0.0264328 0.0135631 0.0346837" rpy="0 0 0"/>
+      <mass value="0.0146282"/>
+      <inertia ixx="4.21079e-06" ixy="-4.28884e-07" ixz="6.50577e-07" iyy="4.93697e-06" iyz="7.33644e-07" izz="1.99287e-06"/>
+    </inertial>
+    <!-- Part follower_07 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="-0 -0 0"/>
+      <geometry>
+        <mesh filename="assets/follower_07.stl"/>
+      </geometry>
+      <material name="follower_07_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-0 -0 0"/>
+      <geometry>
+        <mesh filename="assets/follower_07.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from follower_07 to follower_07_follower_07 -->
+  <joint name="follower_07_follower_07_fixed" type="fixed">
+    <origin xyz="0.0227885 0.0140367 0.00975937" rpy="1.5708 -1.55279 -0"/>
+    <parent link="follower_07"/>
+    <child link="follower_07_follower_07"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from follower_05 to follower_07 -->
+  <joint name="joint_66" type="prismatic">
+    <origin xyz="0.106136 0.017143 -0.00580006" rpy="-3.14159 0 -1.5708"/>
+    <parent link="follower_05"/>
+    <child link="follower_07"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0.00797479" upper="0.00797479"/>
+  </joint>
+  <!-- Link follower_07_2 -->
+  <link name="follower_07_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link follower_07_2_follower_07_2 -->
+  <link name="follower_07_2_follower_07_2">
+    <inertial>
+      <origin xyz="-0.0264328 0.0135631 0.0346837" rpy="0 0 0"/>
+      <mass value="0.0146282"/>
+      <inertia ixx="4.21079e-06" ixy="-4.28884e-07" ixz="6.50577e-07" iyy="4.93697e-06" iyz="7.33644e-07" izz="1.99287e-06"/>
+    </inertial>
+    <!-- Part follower_07_2 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="-0 -0 0"/>
+      <geometry>
+        <mesh filename="assets/follower_07.stl"/>
+      </geometry>
+      <material name="follower_07_2_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-0 -0 0"/>
+      <geometry>
+        <mesh filename="assets/follower_07.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from follower_07_2 to follower_07_2_follower_07_2 -->
+  <joint name="follower_07_2_follower_07_2_fixed" type="fixed">
+    <origin xyz="0.0227885 0.0190367 0.0142643" rpy="1.5708 -1.55279 -0"/>
+    <parent link="follower_07_2"/>
+    <child link="follower_07_2_follower_07_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from follower_05 to follower_07_2 -->
+  <joint name="joint_77" type="prismatic">
+    <origin xyz="0.112436 -0.00345557 -0.0235766" rpy="-0 -0 1.5708"/>
+    <parent link="follower_05"/>
+    <child link="follower_07_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0.0123018" upper="0.0123018"/>
+  </joint>
+  <!-- Link follower_05_follower_05 -->
+  <link name="follower_05_follower_05">
+    <inertial>
+      <origin xyz="0.347705 -0.134465 0.00500109" rpy="0 0 0"/>
+      <mass value="0.168492"/>
+      <inertia ixx="9.04257e-05" ixy="1.6948e-06" ixz="-1.51139e-05" iyy="0.000120866" iyz="4.01449e-06" izz="5.73781e-05"/>
+    </inertial>
+    <!-- Part follower_05 -->
+    <visual>
+      <origin xyz="0 -0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="assets/follower_05.stl"/>
+      </geometry>
+      <material name="follower_05_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="assets/follower_05.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from follower_05 to follower_05_follower_05 -->
+  <joint name="follower_05_follower_05_fixed" type="fixed">
+    <origin xyz="-0.0217518 -0.129684 -0.353216" rpy="-3.14159 -1.29957 0"/>
+    <parent link="follower_05"/>
+    <child link="follower_05_follower_05"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from follower_04 to follower_05 -->
+  <joint name="joint_44" type="revolute">
+    <origin xyz="-0.00442565 -0.129925 -0.00134985" rpy="0 -0 -1.66739"/>
+    <parent link="follower_04"/>
+    <child link="follower_05"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.23818" upper="3.045"/>
+  </joint>
+  <!-- Link follower_04_follower_04 -->
+  <link name="follower_04_follower_04">
+    <inertial>
+      <origin xyz="0.201847 0.0317882 -0.252294" rpy="0 0 0"/>
+      <mass value="0.189497"/>
+      <inertia ixx="0.00021472" ixy="5.85741e-06" ixz="3.38913e-07" iyy="4.30308e-05" iyz="1.40076e-06" izz="0.000201763"/>
+    </inertial>
+    <!-- Part follower_04 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="-0 -0 -0"/>
+      <geometry>
+        <mesh filename="assets/follower_04.stl"/>
+      </geometry>
+      <material name="follower_04_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-0 -0 -0"/>
+      <geometry>
+        <mesh filename="assets/follower_04.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from follower_04 to follower_04_follower_04 -->
+  <joint name="follower_04_follower_04_fixed" type="fixed">
+    <origin xyz="-0.198115 -0.0684023 -0.279782" rpy="3.14159 -0.0280358 -0"/>
+    <parent link="follower_04"/>
+    <child link="follower_04_follower_04"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from follower_03 to follower_04 -->
+  <joint name="joint_33" type="revolute">
+    <origin xyz="0.147532 -0.103123 0.0017" rpy="-0 0 0.994799"/>
+    <parent link="follower_03"/>
+    <child link="follower_04"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.71759" upper="2.5656"/>
+  </joint>
+  <!-- Link follower_03_follower_03 -->
+  <link name="follower_03_follower_03">
+    <inertial>
+      <origin xyz="0.169054 -0.0937152 -0.253168" rpy="0 0 0"/>
+      <mass value="0.220641"/>
+      <inertia ixx="0.000208084" ixy="-0.000224093" ixz="-6.69894e-06" iyy="0.00037182" iyz="-5.08821e-06" izz="0.000508899"/>
+    </inertial>
+    <!-- Part follower_03 -->
+    <visual>
+      <origin xyz="-0 0 0" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="assets/follower_03.stl"/>
+      </geometry>
+      <material name="follower_03_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0 0" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="assets/follower_03.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from follower_03 to follower_03_follower_03 -->
+  <joint name="follower_03_follower_03_fixed" type="fixed">
+    <origin xyz="-0.0505831 -0.171525 -0.276732" rpy="-3.14159 -0.0280358 -0"/>
+    <parent link="follower_03"/>
+    <child link="follower_03_follower_03"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from follower_02 to follower_03 -->
+  <joint name="joint_22" type="revolute">
+    <origin xyz="0.0209 -0 -0.042" rpy="1.5708 0.960749 1.5708"/>
+    <parent link="follower_02"/>
+    <child link="follower_03"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.75164" upper="2.53155"/>
+  </joint>
+  <!-- Link follower_02_follower_02 -->
+  <link name="follower_02_follower_02">
+    <inertial>
+      <origin xyz="0.0577867 -0.186861 -0.256502" rpy="0 0 0"/>
+      <mass value="0.138541"/>
+      <inertia ixx="4.43013e-05" ixy="9.894e-09" ixz="8.1506e-08" iyy="2.44443e-05" iyz="3.62842e-07" izz="4.20237e-05"/>
+    </inertial>
+    <!-- Part follower_02 -->
+    <visual>
+      <origin xyz="0 -0 0" rpy="-0 0 0"/>
+      <geometry>
+        <mesh filename="assets/follower_02.stl"/>
+      </geometry>
+      <material name="follower_02_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 0" rpy="-0 0 0"/>
+      <geometry>
+        <mesh filename="assets/follower_02.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from follower_02 to follower_02_follower_02 -->
+  <joint name="follower_02_follower_02_fixed" type="fixed">
+    <origin xyz="-0.257582 -0.0505831 -0.213525" rpy="-1.5708 0 1.54276"/>
+    <parent link="follower_02"/>
+    <child link="follower_02_follower_02"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from follower_01 to follower_02 -->
+  <joint name="joint_11" type="revolute">
+    <origin xyz="-0.223053 -0.0919755 -0.333534" rpy="1.5708 -0 -0"/>
+    <parent link="follower_01"/>
+    <child link="follower_02"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-4.68435" upper="1.59883"/>
+  </joint>
+  <!-- Link follower_01_follower_01 -->
+  <link name="follower_01_follower_01">
+    <inertial>
+      <origin xyz="0.0604654 -0.261713 -0.266477" rpy="0 0 0"/>
+      <mass value="0.635503"/>
+      <inertia ixx="0.000465365" ixy="1.20418e-05" ixz="3.17377e-06" iyy="0.00145591" iyz="-1.7111e-06" izz="0.00132666"/>
+    </inertial>
+    <!-- Part follower_01 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="assets/follower_01.stl"/>
+      </geometry>
+      <material name="follower_01_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="assets/follower_01.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from follower_01 to follower_01_follower_01 -->
+  <joint name="follower_01_follower_01_fixed" type="fixed">
+    <origin xyz="-0.280837 0.12255 -0.0774706" rpy="0 -0 -0"/>
+    <parent link="follower_01"/>
+    <child link="follower_01_follower_01"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+</robot>

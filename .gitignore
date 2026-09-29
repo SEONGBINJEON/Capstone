@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+# runtime logs / large captures (keep only what is referenced in docs)
+teleoperation/work/*.jsonl
+teleoperation/work/*.log
+teleoperation/work/teleop_status.json
+teleoperation/work/live_A_control.json
+teleoperation/work/shots/
+teleoperation/work/reference/
+teleoperation/work/backups/
+*.tmp
+nohup.out

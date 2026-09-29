@@ -1,0 +1,50 @@
+{
+  "updated_at": 1789233300.8585498,
+  "pid": 28807,
+  "session_id": 25589,
+  "pair": "both",
+  "status": "following",
+  "control_nonce": 19,
+  "control_path": "work/live_A_control.json",
+  "status_path": "work/teleop_status.json",
+  "log": "work/live_A_service.jsonl",
+  "followers": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    21,
+    22,
+    23,
+    24
+  ],
+  "leaders": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    26,
+    27,
+    28,
+    29
+  ],
+  "disabled_ids": [
+    25,
+    30
+  ],
+  "limited_ids": [],
+  "follow_speed_deg_s": 180,
+  "align_speed_deg_s": 15,
+  "notes": "PID28807 retains serial ownership and follower torque. Automatic leader_retreated or leader_pose_matched rejoin now enters following immediately at configured180deg/s instead of repeating15deg/s alignment. Starts at held goal and retains per-cycle slew, command lead bound, acceleration profiles, tracking-error and stall pause, health checks. First startup and explicit --resume still align15deg/s.164 tests pass, including fast automatic profile, bounded first resumed command, slow manual resume, unchanged slow startup, no blocked-side retry, and fault handling. A/B following after live reload. User verified automatic reverse rejoin before this speed change; new physical response feedback pending. B25/30 disabled; calibration and position bounds unchanged.",
+  "preferred_start_pose": "config/start_pose.json",
+  "user_verified": "A/B both follow and return; user requested faster response and selected new rest pose",
+  "pair_phases": {
+    "A": "following",
+    "B": "following"
+  },
+  "paused_pairs": {},
+  "tests_passed": 164,
+  "automatic_resume_speed_deg_s": 180
+}

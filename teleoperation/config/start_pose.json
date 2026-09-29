@@ -1,0 +1,17 @@
+{
+  "captured_at": 1789231097.5249522,
+  "basis": "user_selected_current_leader_start_pose",
+  "leader_positions": {
+    "16": 4103,
+    "17": 2348,
+    "18": 3177,
+    "19": 2922,
+    "20": 69,
+    "26": -8,
+    "27": 2383,
+    "28": 3168,
+    "29": 2948
+  },
+  "calibration_unchanged": true,
+  "note": "Preferred resting pose, not a new neutral. On launch align to latest measured leader pose."
+}

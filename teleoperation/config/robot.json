@@ -1,0 +1,464 @@
+{
+  "version": 1,
+  "baud": 1000000,
+  "buses": {
+    "followers": "/dev/serial/by-path/pci-0000:00:14.0-usb-0:3.1:1.0",
+    "leader_end": "/dev/serial/by-path/pci-0000:00:14.0-usb-0:3.2:1.0",
+    "leader_small": "/dev/serial/by-path/pci-0000:00:14.0-usb-0:3.3:1.0"
+  },
+  "safety": {
+    "rate_hz": 20,
+    "max_cycle_s": 0.15,
+    "max_speed_deg_s": 15,
+    "startup_tolerance_deg": 5,
+    "max_tracking_error_deg": 12,
+    "max_leader_step_deg": 30,
+    "max_temperature_c": 60
+  },
+  "pairs": {
+    "A": [
+      {
+        "name": "joint_1",
+        "leader": {
+          "id": 16,
+          "model": 1200,
+          "bus": "leader_small"
+        },
+        "follower": {
+          "id": 11,
+          "model": 1060,
+          "bus": "followers",
+          "extended_position": {
+            "reference": 1060,
+            "min": 548,
+            "max": 1572
+          }
+        },
+        "calibration": {
+          "reviewed": false,
+          "leader_zero": 4093,
+          "follower_zero": 1060,
+          "direction": 1,
+          "scale": 1.0,
+          "leader_min_deg": null,
+          "leader_max_deg": null,
+          "follower_min_deg": null,
+          "follower_max_deg": null,
+          "signature": {
+            "leader": {
+              "model": 1200,
+              "drive_mode": 0,
+              "operating_mode": 0,
+              "homing_offset": 0
+            },
+            "follower": {
+              "model": 1060,
+              "drive_mode": 4,
+              "operating_mode": 4,
+              "homing_offset": 1024
+            }
+          },
+          "follower_zero_raw_at_capture": 4132,
+          "basis": "mode3_absolute_after_torque_enable",
+          "direction_basis": "user_confirmed_identical_axis_and_mount_orientation; first_joint_observed_both_clockwise_on_decreasing_ticks",
+          "homing_shift": {
+            "old_offset": 0,
+            "new_offset": 1024,
+            "backup": "work/backups/home_shift_11_1789219726835657817.json"
+          },
+          "extended_mode_backup": "work/backups/extended_base_1789220534512537079.json"
+        },
+        "kind": "joint"
+      },
+      {
+        "name": "joint_2",
+        "leader": {
+          "id": 17,
+          "model": 1200,
+          "bus": "leader_small"
+        },
+        "follower": {
+          "id": 12,
+          "model": 1030,
+          "bus": "followers"
+        },
+        "calibration": {
+          "reviewed": false,
+          "leader_zero": 2027.6222222222223,
+          "follower_zero": 2334.222222222222,
+          "direction": 1,
+          "scale": 1.0,
+          "leader_min_deg": null,
+          "leader_max_deg": null,
+          "follower_min_deg": null,
+          "follower_max_deg": null,
+          "signature": {
+            "leader": {
+              "model": 1200,
+              "drive_mode": 0,
+              "operating_mode": 3,
+              "homing_offset": 0
+            },
+            "follower": {
+              "model": 1030,
+              "drive_mode": 0,
+              "operating_mode": 3,
+              "homing_offset": 0
+            }
+          },
+          "follower_zero_raw_at_capture": 2369,
+          "basis": "provisional_physical_link_inclination_user_measurement",
+          "direction_basis": "user_confirmed_identical_axis_and_mount_orientation",
+          "inclination_measurement": {
+            "unix_time": 1789223722.6782918,
+            "leader_down_from_horizontal_deg": 1.0,
+            "follower_down_from_horizontal_deg": 10.0,
+            "leader_position": 3063,
+            "follower_position": 3472,
+            "verification": "User confirmed level bases; after measured low-speed correction user says the two links now look good (2026-09-13). Single-pose validation only."
+          },
+          "pose_alignment_verified": true
+        },
+        "kind": "joint"
+      },
+      {
+        "name": "joint_3",
+        "leader": {
+          "id": 18,
+          "model": 1200,
+          "bus": "leader_small"
+        },
+        "follower": {
+          "id": 13,
+          "model": 1060,
+          "bus": "followers"
+        },
+        "calibration": {
+          "reviewed": false,
+          "leader_zero": 2076,
+          "follower_zero": 1995,
+          "direction": 1,
+          "scale": 1.0,
+          "leader_min_deg": null,
+          "leader_max_deg": null,
+          "follower_min_deg": null,
+          "follower_max_deg": null,
+          "signature": {
+            "leader": {
+              "model": 1200,
+              "drive_mode": 0,
+              "operating_mode": 3,
+              "homing_offset": 0
+            },
+            "follower": {
+              "model": 1060,
+              "drive_mode": 4,
+              "operating_mode": 3,
+              "homing_offset": 0
+            }
+          },
+          "follower_zero_raw_at_capture": 1995,
+          "basis": "mode3_absolute_after_torque_enable",
+          "direction_basis": "user_confirmed_identical_axis_and_mount_orientation"
+        },
+        "kind": "joint"
+      },
+      {
+        "name": "joint_4",
+        "leader": {
+          "id": 19,
+          "model": 1200,
+          "bus": "leader_small"
+        },
+        "follower": {
+          "id": 14,
+          "model": 1060,
+          "bus": "followers"
+        },
+        "calibration": {
+          "reviewed": false,
+          "leader_zero": 2060,
+          "follower_zero": 2064,
+          "direction": 1,
+          "scale": 1.0,
+          "leader_min_deg": null,
+          "leader_max_deg": null,
+          "follower_min_deg": null,
+          "follower_max_deg": null,
+          "signature": {
+            "leader": {
+              "model": 1200,
+              "drive_mode": 0,
+              "operating_mode": 3,
+              "homing_offset": 0
+            },
+            "follower": {
+              "model": 1060,
+              "drive_mode": 4,
+              "operating_mode": 3,
+              "homing_offset": 0
+            }
+          },
+          "follower_zero_raw_at_capture": 2064,
+          "basis": "mode3_absolute_after_torque_enable",
+          "direction_basis": "user_confirmed_identical_axis_and_mount_orientation"
+        },
+        "kind": "joint"
+      },
+      {
+        "name": "gripper",
+        "leader": {
+          "id": 20,
+          "model": 1070,
+          "bus": "leader_end"
+        },
+        "follower": {
+          "id": 15,
+          "model": 1070,
+          "bus": "followers"
+        },
+        "calibration": {
+          "reviewed": true,
+          "leader_closed": 68,
+          "leader_open": 1533,
+          "follower_closed": 916,
+          "follower_open": 2279,
+          "signature": {
+            "leader": {
+              "model": 1070,
+              "drive_mode": 0,
+              "operating_mode": 3,
+              "homing_offset": 0
+            },
+            "follower": {
+              "model": 1070,
+              "drive_mode": 0,
+              "operating_mode": 3,
+              "homing_offset": 0
+            }
+          }
+        },
+        "kind": "gripper"
+      }
+    ],
+    "B": [
+      {
+        "name": "joint_1",
+        "leader": {
+          "id": 26,
+          "model": 1200,
+          "bus": "leader_small"
+        },
+        "follower": {
+          "id": 21,
+          "model": 1060,
+          "bus": "followers",
+          "extended_position": {
+            "reference": 2048,
+            "raw_reference": 4080,
+            "min": 1,
+            "max": 4095
+          }
+        },
+        "calibration": {
+          "reviewed": false,
+          "leader_zero": 12,
+          "follower_zero": 2048,
+          "direction": 1,
+          "scale": 1.0,
+          "leader_min_deg": null,
+          "leader_max_deg": null,
+          "follower_min_deg": null,
+          "follower_max_deg": null,
+          "signature": {
+            "leader": {
+              "model": 1200,
+              "drive_mode": 0,
+              "operating_mode": 0,
+              "homing_offset": 0
+            },
+            "follower": {
+              "model": 1060,
+              "drive_mode": 0,
+              "operating_mode": 4,
+              "homing_offset": 0
+            }
+          },
+          "basis": "user_confirmed_B_upright_2026_09_13",
+          "direction_basis": "user_confirmed_same_motor_axis_design"
+        },
+        "kind": "joint"
+      },
+      {
+        "name": "joint_2",
+        "leader": {
+          "id": 27,
+          "model": 1200,
+          "bus": "leader_small"
+        },
+        "follower": {
+          "id": 22,
+          "model": 1030,
+          "bus": "followers"
+        },
+        "calibration": {
+          "reviewed": false,
+          "leader_zero": 2036,
+          "follower_zero": 2052,
+          "direction": 1,
+          "scale": 1.0,
+          "leader_min_deg": null,
+          "leader_max_deg": null,
+          "follower_min_deg": null,
+          "follower_max_deg": null,
+          "signature": {
+            "leader": {
+              "model": 1200,
+              "drive_mode": 0,
+              "operating_mode": 0,
+              "homing_offset": 0
+            },
+            "follower": {
+              "model": 1030,
+              "drive_mode": 0,
+              "operating_mode": 3,
+              "homing_offset": 0
+            }
+          },
+          "basis": "user_confirmed_B_upright_2026_09_13",
+          "direction_basis": "user_confirmed_same_motor_axis_design"
+        },
+        "kind": "joint"
+      },
+      {
+        "name": "joint_3",
+        "leader": {
+          "id": 28,
+          "model": 1200,
+          "bus": "leader_small"
+        },
+        "follower": {
+          "id": 23,
+          "model": 1060,
+          "bus": "followers"
+        },
+        "calibration": {
+          "reviewed": false,
+          "leader_zero": 2047,
+          "follower_zero": 2042,
+          "direction": 1,
+          "scale": 1.0,
+          "leader_min_deg": null,
+          "leader_max_deg": null,
+          "follower_min_deg": null,
+          "follower_max_deg": null,
+          "signature": {
+            "leader": {
+              "model": 1200,
+              "drive_mode": 0,
+              "operating_mode": 0,
+              "homing_offset": 0
+            },
+            "follower": {
+              "model": 1060,
+              "drive_mode": 0,
+              "operating_mode": 3,
+              "homing_offset": 0
+            }
+          },
+          "basis": "user_confirmed_B_upright_2026_09_13",
+          "direction_basis": "user_confirmed_same_motor_axis_design"
+        },
+        "kind": "joint"
+      },
+      {
+        "name": "joint_4",
+        "leader": {
+          "id": 29,
+          "model": 1200,
+          "bus": "leader_small"
+        },
+        "follower": {
+          "id": 24,
+          "model": 1060,
+          "bus": "followers"
+        },
+        "calibration": {
+          "reviewed": false,
+          "leader_zero": 2051,
+          "follower_zero": 2061,
+          "direction": 1,
+          "scale": 1.0,
+          "leader_min_deg": null,
+          "leader_max_deg": null,
+          "follower_min_deg": null,
+          "follower_max_deg": null,
+          "signature": {
+            "leader": {
+              "model": 1200,
+              "drive_mode": 0,
+              "operating_mode": 0,
+              "homing_offset": 0
+            },
+            "follower": {
+              "model": 1060,
+              "drive_mode": 0,
+              "operating_mode": 3,
+              "homing_offset": 0
+            }
+          },
+          "basis": "user_confirmed_B_upright_2026_09_13",
+          "direction_basis": "user_confirmed_same_motor_axis_design"
+        },
+        "kind": "joint"
+      },
+      {
+        "name": "gripper",
+        "leader": {
+          "id": 30,
+          "model": 1070,
+          "bus": "leader_end"
+        },
+        "follower": {
+          "id": 25,
+          "model": 1060,
+          "bus": "followers"
+        },
+        "calibration": {
+          "reviewed": false,
+          "leader_closed": 160,
+          "leader_open": null,
+          "follower_closed": 2086,
+          "follower_open": null,
+          "signature": {
+            "leader": {
+              "model": 1070,
+              "drive_mode": 0,
+              "operating_mode": 3,
+              "homing_offset": 0
+            },
+            "follower": {
+              "model": 1060,
+              "drive_mode": 4,
+              "operating_mode": 3,
+              "homing_offset": 0
+            }
+          }
+        },
+        "kind": "gripper",
+        "enabled": false,
+        "disabled_reason": "User deferred B gripper 25/30 due hardware problem"
+      }
+    ]
+  },
+  "active_pair": "both",
+  "startup_mode": "align",
+  "direct_A": {
+    "follow_speed_deg_s": 180,
+    "align_speed_deg_s": 15
+  },
+  "direct_B": {
+    "follow_speed_deg_s": 180,
+    "align_speed_deg_s": 15
+  }
+}

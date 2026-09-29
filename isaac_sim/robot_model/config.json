@@ -1,0 +1,9 @@
+{
+    "documentId": "29d2c07e16431e1b6bc67f98",
+    "workspaceId": "2efbcbf417c8f235b23c5bfa",
+    "assemblyId": "745364e3af1d651040077a41",
+    "output_format": "urdf",
+    "drawFrames": true,
+    "drawCollisions": false,
+    "useFixedLinks": true
+}

@@ -1,0 +1,6 @@
+2026-09-13 final validation
+Command: .venv/bin/python -m pytest -q
+Result: 166 passed in 1.62s
+Source ZIP CRC check: passed
+Hardware: all18 enabled motors torque OFF verified before graceful service shutdown. IDs25/30 excluded.
+Service: stopped; no serial control process restarted by documentation or tests.
