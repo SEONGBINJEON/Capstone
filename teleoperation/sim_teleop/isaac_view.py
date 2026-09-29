@@ -19,8 +19,20 @@ ROOT = os.path.dirname(HERE)
 import sys  # noqa: E402
 sys.path.insert(0, HERE)
 
+def default_robot_usd():
+    """Repo layout first (isaac_sim/robot_model/...), then $ROBOT_USD, then the original dev path."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    candidates = [os.environ.get('ROBOT_USD'),
+                  os.path.join(here, '..', '..', 'isaac_sim', 'robot_model', 'usd_isaac', 'robot_isaac', 'robot_isaac.usda'),
+                  os.path.expanduser('~/Desktop/urdf_v3/my_manipulator/usd_isaac/robot_isaac/robot_isaac.usda')]
+    for c in candidates:
+        if c and os.path.exists(c):
+            return os.path.abspath(c)
+    return candidates[1]
+
+
 ap = argparse.ArgumentParser()
-ap.add_argument('--usd', default='/home/jeonsoengbin/Desktop/urdf_v3/my_manipulator/usd_isaac/robot_isaac/robot_isaac.usda')
+ap.add_argument('--usd', default=default_robot_usd())
 ap.add_argument('--port', type=int, default=5005)
 ap.add_argument('--headless', action='store_true')
 ap.add_argument('--scene', choices=['plain', 'kitchen'], default='kitchen')

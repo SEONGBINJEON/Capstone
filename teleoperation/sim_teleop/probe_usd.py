@@ -1,7 +1,7 @@
 """Headless probe: load USD, print DOFs, world bbox, and capture a PNG of the viewport."""
-import sys
+import os, sys
 from isaacsim import SimulationApp
-usd = sys.argv[1] if len(sys.argv) > 1 else '/home/jeonsoengbin/Desktop/urdf_v3/my_manipulator/usd_isaac/robot_isaac/robot_isaac.usda'
+usd = sys.argv[1] if len(sys.argv) > 1 else os.environ.get('ROBOT_USD', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'isaac_sim', 'robot_model', 'usd_isaac', 'robot_isaac', 'robot_isaac.usda'))
 out = sys.argv[2] if len(sys.argv) > 2 else '/tmp/claude-1000/probe.png'
 app = SimulationApp({"headless": True, "width": 1280, "height": 720})
 import omni.usd, omni.kit.app

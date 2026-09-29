@@ -24,6 +24,14 @@ python3 sim_teleop/teleop.py --release   # 팔로워 토크 OFF (팔을 받친 �
 
 자세한 절차와 안전 동작은 [teleoperation/sim_teleop/README.md](teleoperation/sim_teleop/README.md).
 
+## 다른 PC에서 이어서 시작하기
+
+1. 클론 후 `teleoperation/` 폴더에서 작업합니다. 파이썬은 시스템 `python3`(3.10 이상)이면 되고, `dynamixel_sdk`·`pyserial`은 `teleoperation/vendor/`에 동봉되어 있어 설치가 필요 없습니다.
+2. USB 시리얼 권한: `sudo usermod -aG dialout $USER` 후 재로그인. 로그아웃해도 반영이 안 되면 `sudo loginctl terminate-user $USER`(이 PC에서 겪은 문제, docs/progress 참고).
+3. 포트: `sim_teleop/config.json`의 `buses`는 `/dev/serial/by-id/...` 경로라 같은 OpenCR·OpenRB-150 보드를 쓰면 그대로 동작합니다. 보드가 다르면 `ls /dev/serial/by-id/`로 바꿔 넣으세요. 읽기 전용 확인: `python3 sim_teleop/scan_motors.py`, `python3 sim_teleop/teleop.py --status`.
+4. Isaac Sim: 6.0.1 기준. 설치 경로가 `~/isaacsim-6.0.1`이 아니면 `ISAAC=/path/to/isaacsim ./run_sim_teleop.sh`. 로봇 USD는 저장소의 `isaac_sim/robot_model/usd_isaac/`를 자동으로 찾고, 다른 위치면 환경변수 `ROBOT_USD`로 지정합니다.
+5. 모터 EEPROM은 이 저장소의 팔로워 팔 기준으로 이미 변경되어 있습니다(`docs/hardware-notes.md`). 다른 팔을 쓰면 `scan_motors.py`로 모드·제한을 먼저 확인하세요.
+
 ## 현재 상태 (2026-09-28)
 
 - 리더 → 팔로워 실시간 추종 동작 (그리퍼 포함), 180°/s 추종, 걸림·과부하 보호.
